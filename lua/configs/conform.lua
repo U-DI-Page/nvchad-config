@@ -1,8 +1,16 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    javascript = { { "prettierd", "prettier" } },
+    python = function(buffnr)
+      if require("conform").get_formatter_info("ruff_format", buffnr).available then
+        return { "ruff_format" }
+      else
+        return { "isort", "black" }
+      end
+    end,
+    css = { "prettier" },
+    html = { "prettier" },
   },
 
   -- format_on_save = {

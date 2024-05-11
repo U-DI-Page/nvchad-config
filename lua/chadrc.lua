@@ -5,8 +5,15 @@
 local M = {}
 
 M.ui = {
-	theme = "onedark",
+	theme = "everforest",
+  transparency = true,
+  nvdash = {
+    load_on_startup = true,
+  },
 
+  -- telescope = {
+  --     extensions_list = { "xray23" },
+  -- }
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
